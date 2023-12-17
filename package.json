@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "g-cl": "ng g cl --type=model --interactive=true",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

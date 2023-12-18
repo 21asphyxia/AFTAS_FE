@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Competition } from '../models/competition.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,14 +9,15 @@ import { Injectable } from '@angular/core';
 export class CompetitionService {
   url = 'http://localhost:8081/api/v1/competitions';
 
-  constructor(private http: HttpClient) {
-  }
-    
-    getAllCompetitions(page: number, size: number) {
-        return this.http.get(this.url + '?page=' + page + '&size=' + size);
-    }
+  constructor(private http: HttpClient) {}
 
-    createCompetition(competition: any) {
-        return this.http.post(this.url, competition);
-    }
+  getAllCompetitions(page: number, size: number): Observable<Competition[]> {
+    return this.http.get<Competition[]>(
+      this.url + '?page=' + page + '&size=' + size
+    );
+  }
+
+  createCompetition(competition: Competition): Observable<Competition> {
+    return this.http.post<Competition>(this.url, competition);
+  }
 }

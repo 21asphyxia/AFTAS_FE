@@ -1,23 +1,24 @@
 export class Competition {
-    id: number;
-    name: string;
-    description: string;
-    startDate: Date;
-    endDate: Date;
-    status: string;
-    constructor(
-        id: number,
-        name: string,
-        description: string,
-        startDate: Date,
-        endDate: Date,
-        status: string
-    ) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.status = status;
-    }
+  code?: string;
+  date?: string;
+  startTime?: string;
+  endTime?: string;
+  numberOfParticipants?: number;
+  location?: string;
+
+  constructor(
+    code?: string,
+    date?: string,
+    startTime?: string,
+    endTime?: string,
+    numberOfParticipants?: number,
+    location?: string
+  ) {
+    this.code = code;
+    this.date = date;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.numberOfParticipants = numberOfParticipants;
+    this.location = location;
+  }
 }

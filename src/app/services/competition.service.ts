@@ -11,6 +11,9 @@ export class CompetitionService {
 
   constructor(private http: HttpClient) {}
 
+    getCompetitionsCount() {
+        return this.http.get<number>(this.url + '/count');
+  }
   getAllCompetitions(page: number, size: number): Observable<Competition[]> {
     return this.http.get<Competition[]>(
       this.url + '?page=' + page + '&size=' + size
